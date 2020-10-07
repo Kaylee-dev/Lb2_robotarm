@@ -11,7 +11,18 @@
             robotArm.loadLevel("exercise 3");
             
             // Jou instructies volgen hier
-            
+            var move = true;
+            while(move == true){
+                robotArm.grab();
+                var color = robotArm.scan();
+                 if(color != null){
+                    robotArm.moveRight();
+                    robotArm.drop();
+                    robotArm.moveLeft();
+                 } else {
+                    move = false;
+                 }
+            }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>
